@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli", "EPiServerCli\EPiServerCli.csproj", "{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli", "EPiServerCli\EPiServerCli.csproj", "{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9CE6FF6-1C64-44B6-838C-1FEEC795BA81}"
 EndProject
@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{71B47B65
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1A6D58E2-89A7-44FB-BE6B-1824994A6847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.Domain", "src\Domain\Entities\EPiServerCli.Domain.csproj", "{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.Domain", "src\Domain\Entities\EPiServerCli.Domain.csproj", "{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D96E00BF-CB21-4657-AA08-B16BD01E4143}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.Domain.Tests", "tests\Domain\EPiServerCli.Entities.Tests\TestProject1\EPiServerCli.Domain.Tests.csproj", "{3B85E55E-0937-4111-A334-33F8882AC2C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.Domain.Tests", "tests\Domain\EPiServerCli.Entities.Tests\EPiServerCli.Domain.Tests.csproj", "{C32F2523-A5C4-4545-81F9-62D6C4239C5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B85E55E-0937-4111-A334-33F8882AC2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B85E55E-0937-4111-A334-33F8882AC2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B85E55E-0937-4111-A334-33F8882AC2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B85E55E-0937-4111-A334-33F8882AC2C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32F2523-A5C4-4545-81F9-62D6C4239C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32F2523-A5C4-4545-81F9-62D6C4239C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32F2523-A5C4-4545-81F9-62D6C4239C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32F2523-A5C4-4545-81F9-62D6C4239C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,7 +43,7 @@ Global
 		{1A6D58E2-89A7-44FB-BE6B-1824994A6847} = {F9CE6FF6-1C64-44B6-838C-1FEEC795BA81}
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C} = {1A6D58E2-89A7-44FB-BE6B-1824994A6847}
 		{D96E00BF-CB21-4657-AA08-B16BD01E4143} = {71B47B65-FE53-4762-B175-2D07DDD3B04A}
-		{3B85E55E-0937-4111-A334-33F8882AC2C1} = {D96E00BF-CB21-4657-AA08-B16BD01E4143}
+		{C32F2523-A5C4-4545-81F9-62D6C4239C5B} = {D96E00BF-CB21-4657-AA08-B16BD01E4143}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A20D882-00DF-4D8D-B377-1CA8C7595D68}

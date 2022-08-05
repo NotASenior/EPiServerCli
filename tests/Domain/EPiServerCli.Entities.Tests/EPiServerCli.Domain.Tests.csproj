@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Domain\Entities\EPiServerCli.Domain.csproj" />
+    <ProjectReference Include="..\..\..\src\Domain\Entities\EPiServerCli.Domain.csproj" />
   </ItemGroup>
 
 </Project>
