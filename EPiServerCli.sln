@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli", "EPiServerCli\EPiServerCli.csproj", "{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9CE6FF6-1C64-44B6-838C-1FEEC795BA81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{71B47B65-FE53-4762-B175-2D07DDD3B04A}"
@@ -37,16 +35,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.DataAccess.Tests", "tests\DataAccess\EPiServerCli.DataAccess.Tests\EPiServerCli.DataAccess.Tests.csproj", "{CA700F39-6C06-40EC-A0B1-179AFDF90959}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B2FBED39-9EFB-4046-8EC2-7289B108E512}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.Client", "src\Presentation\EPiServerCli.Client\EPiServerCli.Client.csproj", "{4A13846E-9386-4DC6-B83B-6F2A9A44D810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA5BBC26-9583-4380-BB66-D5EE68A7EC05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C74A9E6-D99E-4A3F-A34E-43A1965BAD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,6 +77,10 @@ Global
 		{CA700F39-6C06-40EC-A0B1-179AFDF90959}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA700F39-6C06-40EC-A0B1-179AFDF90959}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA700F39-6C06-40EC-A0B1-179AFDF90959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A13846E-9386-4DC6-B83B-6F2A9A44D810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A13846E-9386-4DC6-B83B-6F2A9A44D810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A13846E-9386-4DC6-B83B-6F2A9A44D810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A13846E-9386-4DC6-B83B-6F2A9A44D810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +100,8 @@ Global
 		{58F93C6A-A031-4039-9E24-BFC036C5C949} = {79195628-F8CC-4B08-80F3-304C1BED2A6F}
 		{548D12E5-5F5C-4784-B21B-05F8560E0F7D} = {71B47B65-FE53-4762-B175-2D07DDD3B04A}
 		{CA700F39-6C06-40EC-A0B1-179AFDF90959} = {548D12E5-5F5C-4784-B21B-05F8560E0F7D}
+		{B2FBED39-9EFB-4046-8EC2-7289B108E512} = {F9CE6FF6-1C64-44B6-838C-1FEEC795BA81}
+		{4A13846E-9386-4DC6-B83B-6F2A9A44D810} = {B2FBED39-9EFB-4046-8EC2-7289B108E512}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A20D882-00DF-4D8D-B377-1CA8C7595D68}
