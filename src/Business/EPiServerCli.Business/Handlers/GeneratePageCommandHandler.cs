@@ -2,6 +2,7 @@
 using EPiServerCli.Business.Interfaces.Static;
 using EPiServerCli.DataAccess.Interfaces.Repositories;
 using EPiServerCli.Domain.Entities;
+using EPiServerCli.Domain.Exceptions;
 
 namespace EPiServerCli.Business.Handlers
 {
@@ -24,7 +25,14 @@ namespace EPiServerCli.Business.Handlers
             var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{command.Name}.cs", controllerContent);
             var createViewTask = repository.CreateAsync($"{directoryPath}/Views/{command.Name}/Index.cshtml", viewContent);
 
-            await Task.WhenAll(createClassTask, createControllerTask, createViewTask);
+            try
+            {
+                await Task.WhenAll(createClassTask, createControllerTask, createViewTask);
+            }
+            catch
+            {
+                throw new ScaffoldingException();
+            }
         }
 
         private async Task<(string classContent, string controllerContent, string viewContent)> GetFilesContents(Command command)
@@ -33,7 +41,14 @@ namespace EPiServerCli.Business.Handlers
             Task<string>? controllerTemplateTask = repository.GetAsync(Templates.Pages.Controller);
             Task<string>? viewTemplateTask = repository.GetAsync(Templates.Pages.View);
 
-            await Task.WhenAll(classTemplateTask, controllerTemplateTask, viewTemplateTask);
+            try
+            {
+                await Task.WhenAll(classTemplateTask, controllerTemplateTask, viewTemplateTask);
+            }
+            catch
+            {
+                throw new TemplateReadingException();
+            }
 
             string classTemplate = classTemplateTask.Result;
             string controllerTemplate = controllerTemplateTask.Result;
@@ -45,9 +60,16 @@ namespace EPiServerCli.Business.Handlers
             string directoryPath = Directory.GetCurrentDirectory();
             string nameSpace = new DirectoryInfo(directoryPath).Name;
 
-            classTemplate = string.Format(classTemplate, guid, name, nameSpace);
-            controllerTemplate = string.Format(controllerTemplate, name, nameSpace);
-            viewTemplate = string.Format(viewTemplate, name, nameSpace);
+            try
+            {
+                classTemplate = string.Format(classTemplate, guid, name, nameSpace);
+                controllerTemplate = string.Format(controllerTemplate, name, nameSpace);
+                viewTemplate = string.Format(viewTemplate, name, nameSpace);
+            }
+            catch
+            {
+                throw new TemplateFormattingException();
+            }
 
             return (classTemplate, controllerTemplate, viewTemplate);
         }

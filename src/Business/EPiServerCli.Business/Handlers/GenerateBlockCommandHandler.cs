@@ -2,6 +2,7 @@
 using EPiServerCli.Business.Interfaces.Static;
 using EPiServerCli.DataAccess.Interfaces.Repositories;
 using EPiServerCli.Domain.Entities;
+using EPiServerCli.Domain.Exceptions;
 
 namespace EPiServerCli.Business.Handlers
 {
@@ -23,7 +24,14 @@ namespace EPiServerCli.Business.Handlers
             var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Blocks/{command.Name}.cs", classContent);
             var createViewTask = repository.CreateAsync($"{directoryPath}/Views/Shared/Blocks/{command.Name}.cshtml", viewContent);
 
-            await Task.WhenAll(createClassTask, createViewTask);
+            try
+            {
+                await Task.WhenAll(createClassTask, createViewTask);
+            }
+            catch
+            {
+                throw new ScaffoldingException();
+            }
         }
 
         private async Task<(string classContent, string viewContent)> GetFilesContents(Command command)
@@ -31,7 +39,14 @@ namespace EPiServerCli.Business.Handlers
             Task<string>? classTemplateTask = repository.GetAsync(Templates.Blocks.Class);
             Task<string>? viewTemplateTask = repository.GetAsync(Templates.Blocks.View);
 
-            await Task.WhenAll(classTemplateTask, viewTemplateTask);
+            try
+            {
+                await Task.WhenAll(classTemplateTask, viewTemplateTask);
+            }
+            catch
+            {
+                throw new TemplateReadingException();
+            }
 
             string classTemplate = classTemplateTask.Result;
             string viewTemplate = viewTemplateTask.Result;
@@ -42,8 +57,15 @@ namespace EPiServerCli.Business.Handlers
             string directoryPath = Directory.GetCurrentDirectory();
             string nameSpace = new DirectoryInfo(directoryPath).Name;
 
-            classTemplate = string.Format(classTemplate, guid, name, nameSpace);
-            viewTemplate = string.Format(viewTemplate, name, nameSpace);
+            try
+            {
+                classTemplate = string.Format(classTemplate, guid, name, nameSpace);
+                viewTemplate = string.Format(viewTemplate, name, nameSpace);
+            }
+            catch
+            {
+                throw new TemplateFormattingException();
+            }
 
             return (classTemplate, viewTemplate);
         }
