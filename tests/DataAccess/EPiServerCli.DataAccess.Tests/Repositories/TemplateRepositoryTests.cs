@@ -21,7 +21,7 @@ namespace EPiServerCli.DataAccess.Tests.Services
         [InlineData(null)]
         [InlineData("")]
         [InlineData("    ")]
-        public void Command_Invalid_ShouldThrow(string path)
+        public void Get_Invalid_ShouldThrow(string path)
         {
             Assert.ThrowsAsync<ArgumentOutOfRangeException>(async () => await templateRepository.GetAsync(path));
         }
@@ -33,7 +33,7 @@ namespace EPiServerCli.DataAccess.Tests.Services
         [InlineData("path.cs", null)]
         [InlineData("path.cs", "")]
         [InlineData("path.cs", "    ")]
-        public void Write_Invalid_ShouldThrow(string path, string content)
+        public void Create_Invalid_ShouldThrow(string path, string content)
         {
             Assert.ThrowsAsync<ArgumentException>(async () => await templateRepository.CreateAsync(path, content));
         }

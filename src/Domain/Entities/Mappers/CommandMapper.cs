@@ -20,7 +20,7 @@ namespace EPiServerCli.Domain.Mappers
 
             if (string.IsNullOrEmpty(command?.Trim()))
             {
-                throw new ArgumentException(nameof(command));
+                throw new ArgumentException(null, nameof(command));
             }
 
             string[]? commandParts = command.Trim().Split(' ');

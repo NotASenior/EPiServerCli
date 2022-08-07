@@ -10,7 +10,7 @@ namespace EPiServerCli.Domain.Mappers
 
             if (string.IsNullOrEmpty(type?.Trim()))
             {
-                throw new ArgumentException(nameof(type));
+                throw new ArgumentException(null, nameof(type));
             }
 
             switch (type.ToLower())

@@ -15,35 +15,36 @@ namespace EPiServerCli.DataAccess.Repositories
 
         public Task<string> GetAsync(string path)
         {
-            if (string.IsNullOrEmpty(path?.Trim()))
-            {
-                throw new ArgumentException(nameof(path));
-            }
+            Validate(path, nameof(path));
+            string finalPath = GetFinalPath(path);
 
-            string basePath = GetBasePath();
-            path = Path.Combine(basePath, path);
-
-            return fileService.ReadAllTextAsync(path);
+            return fileService.ReadAllTextAsync(finalPath);
         }
 
         public Task CreateAsync(string path, string content)
         {
-            if (string.IsNullOrEmpty(path?.Trim()))
-            {
-                throw new ArgumentException(nameof(path));
-            }
-            if (string.IsNullOrEmpty(content?.Trim()))
-            {
-                throw new ArgumentException(nameof(path));
-            }
+            Validate(path, nameof(path));
+            Validate(content, nameof(content));
+            string finalPath = GetFinalPath(path);
 
-            string basePath = GetBasePath();
-            path = Path.Combine(basePath, path);
-
-            return fileService.WriteAllTextAsync(path, content);
+            return fileService.WriteAllTextAsync(finalPath, content);
+        }
+        
+        private static void Validate(string parameter, string parameterName)
+        {
+            if (string.IsNullOrEmpty(parameter?.Trim()))
+            {
+                throw new ArgumentException(null, parameterName);
+            }
         }
 
-        private string GetBasePath()
+        private string GetFinalPath(string path)
+        {
+            string basePath = GetBasePath();
+            return fileService.CombinePath(basePath, path);
+        }
+
+        private static string GetBasePath()
         {
             return AppDomain.CurrentDomain.BaseDirectory;
         }

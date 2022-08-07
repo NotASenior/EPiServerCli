@@ -4,5 +4,6 @@
     {
         Task<string> ReadAllTextAsync(string path);
         Task WriteAllTextAsync(string path, string content);
+        string CombinePath(string basePath, string path);
     }
 }
