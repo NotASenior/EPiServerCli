@@ -2,6 +2,8 @@
 using EPiServerCli.Business.Handlers;
 using EPiServerCli.Business.Interfaces.Factories;
 using EPiServerCli.Business.Interfaces.Handlers;
+using EPiServerCli.DataAccess.Repositories;
+using EPiServerCli.DataAccess.Services;
 using EPiServerCli.Domain.Entities;
 using Moq;
 using System;
@@ -16,7 +18,9 @@ namespace EPiServerCli.Business.Tests.Factories
 
         public CommandHandlerFactoryTests()
         {
-            this.factory = new CommandHandlerFactory();
+            var fileService = new FileService();
+            var templateRepository = new TemplateRepository(fileService);
+            this.factory = new CommandHandlerFactory(templateRepository);
         }
 
         [Fact]

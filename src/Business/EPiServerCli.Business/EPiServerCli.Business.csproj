@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\EPiServerCli.DataAccess.Interfaces\EPiServerCli.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\..\Domain\Entities\EPiServerCli.Domain.csproj" />
     <ProjectReference Include="..\EPiServerCli.Business.Interfaces\EPiServerCli.Business.Interfaces.csproj" />
   </ItemGroup>

@@ -1,4 +1,6 @@
-﻿namespace EPiServerCli.Business.Tests.Services
+﻿using Xunit;
+
+namespace EPiServerCli.Business.Tests.Services
 {
     public class CommandServiceTests
     {
