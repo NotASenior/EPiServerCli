@@ -27,8 +27,11 @@ namespace EPiServerCli.Business.Handlers
             string guid = Guid.NewGuid().ToString();
             string name = command.Name;
 
-            classTemplate = string.Format(classTemplate, guid, name);
-            viewTemplate = string.Format(viewTemplate, guid, name);
+            string directoryPath = Directory.GetCurrentDirectory();
+            string directoryName = new DirectoryInfo(directoryPath).Name;
+
+            classTemplate = string.Format(classTemplate, guid, name, directoryName);
+            viewTemplate = string.Format(viewTemplate, name);
 
             var createClassTask = repository.CreateAsync($"~/Models/Blocks/{name}.cs", classTemplate);
             var createViewTask = repository.CreateAsync($"~/Views/Shared/Blocks/{name}.cshtml", viewTemplate);

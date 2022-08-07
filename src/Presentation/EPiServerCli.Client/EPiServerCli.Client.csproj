@@ -11,4 +11,40 @@
 	<PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Templates\Block.txt" />
+    <None Remove="Templates\BlockView.txt" />
+    <None Remove="Templates\Page.txt" />
+    <None Remove="Templates\PageController.txt" />
+    <None Remove="Templates\PageView.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\Block.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\BlockView.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Page.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PageController.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PageView.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\EPiServerCli.Business.Interfaces\EPiServerCli.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Business\EPiServerCli.Business\EPiServerCli.Business.csproj" />
+    <ProjectReference Include="..\..\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

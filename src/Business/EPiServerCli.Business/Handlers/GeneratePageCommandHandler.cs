@@ -29,13 +29,16 @@ namespace EPiServerCli.Business.Handlers
             string guid = Guid.NewGuid().ToString();
             string name = command.Name;
 
-            classTemplate = string.Format(classTemplate, guid, name);
-            controllerTemplate = string.Format(controllerTemplate, guid, name);
-            viewTemplate = string.Format(viewTemplate, guid, name);
+            string directoryPath = Directory.GetCurrentDirectory();
+            string directoryName = new DirectoryInfo(directoryPath).Name;
 
-            var createClassTask = repository.CreateAsync($"~/Models/Pages/{name}.cs", classTemplate);
-            var createControllerTask = repository.CreateAsync($"~/Controllers/{name}.cs", controllerTemplate);
-            var createViewTask = repository.CreateAsync($"~/Views/{name}/Index.cshtml", viewTemplate);
+            classTemplate = string.Format(classTemplate, guid, name, directoryName);
+            controllerTemplate = string.Format(controllerTemplate, name, directoryName);
+            viewTemplate = string.Format(viewTemplate, name, directoryName);
+
+            var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Pages/{name}.cs", classTemplate);
+            var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{name}.cs", controllerTemplate);
+            var createViewTask = repository.CreateAsync($"{directoryPath}/Views/{name}/Index.cshtml", viewTemplate);
 
             await Task.WhenAll(createClassTask, createControllerTask, createViewTask);
         }

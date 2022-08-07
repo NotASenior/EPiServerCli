@@ -1,0 +1,9 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model {0}
+
+<div>
+    <h2>@Html.PropertyFor(m => m.Title)</h2>
+    <p>@Html.PropertyFor(m => m.Subtext)</p>
+</div>

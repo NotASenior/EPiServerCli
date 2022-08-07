@@ -24,6 +24,8 @@ namespace EPiServerCli.DataAccess.Services
             {
                 throw new ArgumentException(nameof(content));
             }
+            
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
 
             return File.WriteAllTextAsync(path, content);
         }
