@@ -16,6 +16,19 @@ namespace EPiServerCli.Business.Handlers
 
         public async Task ExecuteAsync(Command command)
         {
+            (string classContent, string controllerContent, string viewContent) = await GetFilesContents(command);
+
+            string directoryPath = Directory.GetCurrentDirectory();
+
+            var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Pages/{command.Name}.cs", classContent);
+            var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{command.Name}.cs", controllerContent);
+            var createViewTask = repository.CreateAsync($"{directoryPath}/Views/{command.Name}/Index.cshtml", viewContent);
+
+            await Task.WhenAll(createClassTask, createControllerTask, createViewTask);
+        }
+
+        private async Task<(string classContent, string controllerContent, string viewContent)> GetFilesContents(Command command)
+        {
             Task<string>? classTemplateTask = repository.GetAsync(Templates.Pages.Class);
             Task<string>? controllerTemplateTask = repository.GetAsync(Templates.Pages.Controller);
             Task<string>? viewTemplateTask = repository.GetAsync(Templates.Pages.View);
@@ -30,17 +43,13 @@ namespace EPiServerCli.Business.Handlers
             string name = command.Name;
 
             string directoryPath = Directory.GetCurrentDirectory();
-            string directoryName = new DirectoryInfo(directoryPath).Name;
+            string nameSpace = new DirectoryInfo(directoryPath).Name;
 
-            classTemplate = string.Format(classTemplate, guid, name, directoryName);
-            controllerTemplate = string.Format(controllerTemplate, name, directoryName);
-            viewTemplate = string.Format(viewTemplate, name, directoryName);
+            classTemplate = string.Format(classTemplate, guid, name, nameSpace);
+            controllerTemplate = string.Format(controllerTemplate, name, nameSpace);
+            viewTemplate = string.Format(viewTemplate, name, nameSpace);
 
-            var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Pages/{name}.cs", classTemplate);
-            var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{name}.cs", controllerTemplate);
-            var createViewTask = repository.CreateAsync($"{directoryPath}/Views/{name}/Index.cshtml", viewTemplate);
-
-            await Task.WhenAll(createClassTask, createControllerTask, createViewTask);
+            return (classTemplate, controllerTemplate, viewTemplate);
         }
     }
 }

@@ -16,8 +16,20 @@ namespace EPiServerCli.Business.Handlers
 
         public async Task ExecuteAsync(Command command)
         {
-            var classTemplateTask = repository.GetAsync(Templates.Blocks.Class);
-            var viewTemplateTask = repository.GetAsync(Templates.Blocks.View);
+            (string classContent, string viewContent) = await GetFilesContents(command);
+
+            string directoryPath = Directory.GetCurrentDirectory();
+
+            var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Blocks/{command.Name}.cs", classContent);
+            var createViewTask = repository.CreateAsync($"{directoryPath}/Views/Shared/Blocks/{command.Name}.cshtml", viewContent);
+
+            await Task.WhenAll(createClassTask, createViewTask);
+        }
+
+        private async Task<(string classContent, string viewContent)> GetFilesContents(Command command)
+        {
+            Task<string>? classTemplateTask = repository.GetAsync(Templates.Blocks.Class);
+            Task<string>? viewTemplateTask = repository.GetAsync(Templates.Blocks.View);
 
             await Task.WhenAll(classTemplateTask, viewTemplateTask);
 
@@ -28,15 +40,12 @@ namespace EPiServerCli.Business.Handlers
             string name = command.Name;
 
             string directoryPath = Directory.GetCurrentDirectory();
-            string directoryName = new DirectoryInfo(directoryPath).Name;
+            string nameSpace = new DirectoryInfo(directoryPath).Name;
 
-            classTemplate = string.Format(classTemplate, guid, name, directoryName);
-            viewTemplate = string.Format(viewTemplate, name);
+            classTemplate = string.Format(classTemplate, guid, name, nameSpace);
+            viewTemplate = string.Format(viewTemplate, name, nameSpace);
 
-            var createClassTask = repository.CreateAsync($"~/Models/Blocks/{name}.cs", classTemplate);
-            var createViewTask = repository.CreateAsync($"~/Views/Shared/Blocks/{name}.cshtml", viewTemplate);
-
-            await Task.WhenAll(createClassTask, createViewTask);
+            return (classTemplate, viewTemplate);
         }
     }
 }
