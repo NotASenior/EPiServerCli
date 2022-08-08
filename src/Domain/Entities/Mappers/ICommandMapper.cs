@@ -1,6 +1,6 @@
-﻿using EPiServerCli.Domain.Entities;
+﻿using Opti.Cli.Domain.Entities;
 
-namespace EPiServerCli.Domain.Mappers
+namespace Opti.Cli.Domain.Mappers
 {
     public interface ICommandMapper
     {

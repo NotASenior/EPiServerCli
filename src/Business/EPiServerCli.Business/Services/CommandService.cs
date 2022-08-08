@@ -1,10 +1,10 @@
-﻿using EPiServerCli.Business.Interfaces.Factories;
-using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.Business.Interfaces.Services;
-using EPiServerCli.Domain.Entities;
-using EPiServerCli.Domain.Mappers;
+﻿using Opti.Cli.Business.Interfaces.Factories;
+using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.Business.Interfaces.Services;
+using Opti.Cli.Domain.Entities;
+using Opti.Cli.Domain.Mappers;
 
-namespace EPiServerCli.Business.Services
+namespace Opti.Cli.Business.Services
 {
     public class CommandService : ICommandService
     {

@@ -1,28 +1,28 @@
-# EPiServer CLI
-A Command Line Interface tool to **scaffold pages and blocks** for EPiServer CMS (And **more stuff soon!**)
+# Opti CLI
+A Command Line Interface tool to **scaffold pages and blocks** for EPiServer/Optimizely CMS (And **more stuff soon!**)
 
 ## How to use it?
 You can use the tool easily in an **easy-to-remember** format:
 
-`epi generate page TestPage`
+`opti generate page TestPage`
 
 You can even use it **without typing the whole command**:
 
-`epi g page TestPage`
-`epi ge page TestPage`
-`epi gen page TestPage`
+`opti g page TestPage`
+`opti ge page TestPage`
+`opti gen page TestPage`
 
 This command will **autocomplete** to this:
 
-`epi generate page TestPage`
+`opti generate page TestPage`
 
 You can also **skip the type of content** to create, **or the suffix**:
 
-`epi g p Test`
+`opti g p Test`
 
 These commands will **autocomplete** to this:
 
-`epi generate page TestPage`
+`opti generate page TestPage`
 
 When executed, this command will generate the page **class, controller and view!** 
 (And a **view model** if you use a **flag**. **Isn't this great!?**)

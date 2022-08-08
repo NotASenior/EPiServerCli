@@ -1,11 +1,11 @@
-﻿using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.DataAccess.Interfaces.Services;
-using EPiServerCli.DataAccess.Repositories;
-using EPiServerCli.DataAccess.Services;
+﻿using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.DataAccess.Interfaces.Services;
+using Opti.Cli.DataAccess.Repositories;
+using Opti.Cli.DataAccess.Services;
 using System;
 using Xunit;
 
-namespace EPiServerCli.DataAccess.Tests.Services
+namespace Opti.Cli.DataAccess.Tests.Services
 {
     public class TemplateRepositoryTests
     {

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\Entities\EPiServerCli.Domain.csproj" />
+    <ProjectReference Include="..\..\Domain\Entities\Opti.Cli.Domain.csproj" />
   </ItemGroup>
 
 </Project>

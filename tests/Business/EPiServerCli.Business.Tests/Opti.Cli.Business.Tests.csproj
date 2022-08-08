@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Business\EPiServerCli.Business.Interfaces\EPiServerCli.Business.Interfaces.csproj" />
-    <ProjectReference Include="..\..\..\src\Business\EPiServerCli.Business\EPiServerCli.Business.csproj" />
-    <ProjectReference Include="..\..\..\src\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj" />
+    <ProjectReference Include="..\..\..\src\Business\EPiServerCli.Business.Interfaces\Opti.Cli.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\..\..\src\Business\EPiServerCli.Business\Opti.Cli.Business.csproj" />
+    <ProjectReference Include="..\..\..\src\DataAccess\EPiServerCli.DataAccess\Opti.Cli.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

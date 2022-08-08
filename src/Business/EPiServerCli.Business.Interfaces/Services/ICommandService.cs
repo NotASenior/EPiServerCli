@@ -1,6 +1,6 @@
-﻿using EPiServerCli.Domain.Exceptions;
+﻿using Opti.Cli.Domain.Exceptions;
 
-namespace EPiServerCli.Business.Interfaces.Services
+namespace Opti.Cli.Business.Interfaces.Services
 {
     public interface ICommandService
     {

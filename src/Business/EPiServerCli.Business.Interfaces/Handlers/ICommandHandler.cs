@@ -1,6 +1,6 @@
-﻿using EPiServerCli.Domain.Entities;
+﻿using Opti.Cli.Domain.Entities;
 
-namespace EPiServerCli.Business.Interfaces.Handlers
+namespace Opti.Cli.Business.Interfaces.Handlers
 {
     public interface ICommandHandler
     {

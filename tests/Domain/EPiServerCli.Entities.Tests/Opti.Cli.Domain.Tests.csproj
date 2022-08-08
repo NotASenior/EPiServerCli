@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\DataAccess\EPiServerCli.DataAccess.Interfaces\EPiServerCli.DataAccess.Interfaces.csproj" />
-    <ProjectReference Include="..\..\..\src\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj" />
+    <ProjectReference Include="..\..\..\src\Domain\Entities\Opti.Cli.Domain.csproj" />
   </ItemGroup>
 
 </Project>

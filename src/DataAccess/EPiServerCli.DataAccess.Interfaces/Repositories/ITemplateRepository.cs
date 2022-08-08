@@ -1,4 +1,4 @@
-﻿namespace EPiServerCli.DataAccess.Interfaces.Repositories
+﻿namespace Opti.Cli.DataAccess.Interfaces.Repositories
 {
     public interface ITemplateRepository
     {

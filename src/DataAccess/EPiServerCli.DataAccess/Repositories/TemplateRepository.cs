@@ -1,7 +1,7 @@
-﻿using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.DataAccess.Interfaces.Services;
+﻿using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.DataAccess.Interfaces.Services;
 
-namespace EPiServerCli.DataAccess.Repositories
+namespace Opti.Cli.DataAccess.Repositories
 {
     public class TemplateRepository : ITemplateRepository
     {

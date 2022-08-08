@@ -1,6 +1,6 @@
-﻿using EPiServerCli.DataAccess.Interfaces.Services;
+﻿using Opti.Cli.DataAccess.Interfaces.Services;
 
-namespace EPiServerCli.DataAccess.Services
+namespace Opti.Cli.DataAccess.Services
 {
     public class FileService : IFileService
     {

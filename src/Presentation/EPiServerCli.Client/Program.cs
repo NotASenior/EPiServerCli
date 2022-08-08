@@ -1,17 +1,16 @@
-﻿using EPiServerCli.Business.Factories;
-using EPiServerCli.Business.Handlers;
-using EPiServerCli.Business.Interfaces.Factories;
-using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.Business.Interfaces.Services;
-using EPiServerCli.Business.Services;
-using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.DataAccess.Interfaces.Services;
-using EPiServerCli.DataAccess.Repositories;
-using EPiServerCli.DataAccess.Services;
-using EPiServerCli.Domain.Mappers;
+﻿using Opti.Cli.Business.Factories;
+using Opti.Cli.Business.Handlers;
+using Opti.Cli.Business.Interfaces.Factories;
+using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.Business.Interfaces.Services;
+using Opti.Cli.Business.Services;
+using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.DataAccess.Interfaces.Services;
+using Opti.Cli.DataAccess.Repositories;
+using Opti.Cli.DataAccess.Services;
+using Opti.Cli.Domain.Mappers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Reflection;
 
 using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>

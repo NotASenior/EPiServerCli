@@ -1,4 +1,4 @@
-﻿namespace EPiServerCli.Domain.Entities
+﻿namespace Opti.Cli.Domain.Entities
 {
     public enum CommandType
     {

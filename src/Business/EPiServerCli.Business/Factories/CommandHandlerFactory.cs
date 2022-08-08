@@ -1,10 +1,10 @@
-﻿using EPiServerCli.Business.Handlers;
-using EPiServerCli.Business.Interfaces.Factories;
-using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.Domain.Entities;
+﻿using Opti.Cli.Business.Handlers;
+using Opti.Cli.Business.Interfaces.Factories;
+using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.Domain.Entities;
 
-namespace EPiServerCli.Business.Factories
+namespace Opti.Cli.Business.Factories
 {
     public class CommandHandlerFactory : ICommandHandlerFactory
     {

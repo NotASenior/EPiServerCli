@@ -1,10 +1,10 @@
-using EPiServerCli.Domain.Entities;
-using EPiServerCli.Domain.Exceptions;
-using EPiServerCli.Domain.Mappers;
+using Opti.Cli.Domain.Entities;
+using Opti.Cli.Domain.Exceptions;
+using Opti.Cli.Domain.Mappers;
 using System;
 using Xunit;
 
-namespace EPiServerCli.Domain.Tests.Mappers
+namespace Opti.Cli.Domain.Tests.Mappers
 {
     public class CommandTypeMapperTests
     {

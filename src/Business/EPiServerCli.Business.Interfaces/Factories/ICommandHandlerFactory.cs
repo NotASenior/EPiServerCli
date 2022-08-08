@@ -1,7 +1,7 @@
-﻿using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.Domain.Entities;
+﻿using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.Domain.Entities;
 
-namespace EPiServerCli.Business.Interfaces.Factories
+namespace Opti.Cli.Business.Interfaces.Factories
 {
     public interface ICommandHandlerFactory
     {

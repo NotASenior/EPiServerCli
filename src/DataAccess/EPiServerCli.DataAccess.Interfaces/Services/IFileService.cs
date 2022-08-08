@@ -1,4 +1,4 @@
-﻿namespace EPiServerCli.DataAccess.Interfaces.Services
+﻿namespace Opti.Cli.DataAccess.Interfaces.Services
 {
     public interface IFileService
     {

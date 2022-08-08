@@ -1,7 +1,7 @@
-﻿using EPiServerCli.Domain.Entities;
-using EPiServerCli.Domain.Exceptions;
+﻿using Opti.Cli.Domain.Entities;
+using Opti.Cli.Domain.Exceptions;
 
-namespace EPiServerCli.Domain.Mappers
+namespace Opti.Cli.Domain.Mappers
 {
     public class CommandMapper : ICommandMapper
     {

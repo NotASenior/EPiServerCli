@@ -1,13 +1,13 @@
-﻿using EPiServerCli.Business.Handlers;
-using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.Domain.Entities;
-using EPiServerCli.Domain.Exceptions;
+﻿using Opti.Cli.Business.Handlers;
+using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.Domain.Entities;
+using Opti.Cli.Domain.Exceptions;
 using Moq;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace EPiServerCli.Business.Tests.Handlers
+namespace Opti.Cli.Business.Tests.Handlers
 {
     public class GenerateBlockCommandHandlerTests
     {

@@ -1,16 +1,16 @@
-﻿using EPiServerCli.Business.Factories;
-using EPiServerCli.Business.Handlers;
-using EPiServerCli.Business.Interfaces.Factories;
-using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.DataAccess.Repositories;
-using EPiServerCli.DataAccess.Services;
-using EPiServerCli.Domain.Entities;
+﻿using Opti.Cli.Business.Factories;
+using Opti.Cli.Business.Handlers;
+using Opti.Cli.Business.Interfaces.Factories;
+using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.DataAccess.Repositories;
+using Opti.Cli.DataAccess.Services;
+using Opti.Cli.Domain.Entities;
 using Moq;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace EPiServerCli.Business.Tests.Factories
+namespace Opti.Cli.Business.Tests.Factories
 {
     public class CommandHandlerFactoryTests
     {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 	  
 	<PackAsTool>true</PackAsTool>
-	<ToolCommandName>epi</ToolCommandName>
+	<ToolCommandName>opti</ToolCommandName>
 	<PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
@@ -42,9 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Business\EPiServerCli.Business.Interfaces\EPiServerCli.Business.Interfaces.csproj" />
-    <ProjectReference Include="..\..\Business\EPiServerCli.Business\EPiServerCli.Business.csproj" />
-    <ProjectReference Include="..\..\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Business\EPiServerCli.Business.Interfaces\Opti.Cli.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Business\EPiServerCli.Business\Opti.Cli.Business.csproj" />
+    <ProjectReference Include="..\..\DataAccess\EPiServerCli.DataAccess\Opti.Cli.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

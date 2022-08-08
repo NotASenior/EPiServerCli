@@ -1,10 +1,10 @@
-﻿using EPiServerCli.Business.Interfaces.Handlers;
-using EPiServerCli.Business.Interfaces.Static;
-using EPiServerCli.DataAccess.Interfaces.Repositories;
-using EPiServerCli.Domain.Entities;
-using EPiServerCli.Domain.Exceptions;
+﻿using Opti.Cli.Business.Interfaces.Handlers;
+using Opti.Cli.Business.Interfaces.Static;
+using Opti.Cli.DataAccess.Interfaces.Repositories;
+using Opti.Cli.Domain.Entities;
+using Opti.Cli.Domain.Exceptions;
 
-namespace EPiServerCli.Business.Handlers
+namespace Opti.Cli.Business.Handlers
 {
     public class GeneratePageCommandHandler : ICommandHandler
     {

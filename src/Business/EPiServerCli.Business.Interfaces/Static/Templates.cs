@@ -1,4 +1,4 @@
-﻿namespace EPiServerCli.Business.Interfaces.Static
+﻿namespace Opti.Cli.Business.Interfaces.Static
 {
     public static class Templates
     {

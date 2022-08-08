@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace EPiServerCli.Business.Tests.Services
+namespace Opti.Cli.Business.Tests.Services
 {
     public class CommandServiceTests
     {
