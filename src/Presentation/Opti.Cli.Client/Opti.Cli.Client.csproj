@@ -21,13 +21,14 @@
 	<PackageTags>episerver;optimizely;cms;cli;scaffold</PackageTags>
 	<AssemblyVersion>0.0.1.0</AssemblyVersion>
 	<FileVersion>0.0.1.0</FileVersion>
+	<Version>1.0.3</Version>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 	
 	
   <ItemGroup>
-	<None Include="LICENSE" Pack="true" Visible="false" PackagePath=""/>
+	<None Include="LICENSE" Pack="true" Visible="false" PackagePath="" />
     <None Remove="Templates\Block.txt" />
     <None Remove="Templates\BlockView.txt" />
     <None Remove="Templates\Page.txt" />
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\..\DataAccess\Opti.Cli.DataAccess.Interfaces\Opti.Cli.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\..\DataAccess\Opti.Cli.DataAccess\Opti.Cli.DataAccess.csproj" />
     <ProjectReference Include="..\..\Domain\Opti.Cli.Domain\Opti.Cli.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="nupkg\" />
   </ItemGroup>
 
 </Project>

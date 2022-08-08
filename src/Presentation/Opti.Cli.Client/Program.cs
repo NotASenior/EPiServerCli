@@ -14,36 +14,48 @@ using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using Opti.Cli.Domain.Exceptions;
 
-await Init(args);
-
-async Task Init(string[] args)
+if (args.Length == 0)
 {
-    if (args.Length == 0)
-    {
-        ShowHelp();
-        return;
-    }
+    ShowHelp();
+    return;
+}
 
-    IServiceProvider provider = GetServiceProvider();
-    ICommandService commandService = provider.GetRequiredService<ICommandService>();
+using IHost host = Host.CreateDefaultBuilder(args)
+.ConfigureServices((_, services) =>
+    services
+        .AddScoped<ICommandMapper, CommandMapper>()
+        .AddScoped<ICommandTypeMapper, CommandTypeMapper>()
+        .AddScoped<IObjectTypeMapper, ObjectTypeMapper>()
+        .AddScoped<IFileService, FileService>()
+        .AddScoped<ITemplateRepository, TemplateRepository>()
+        .AddScoped<ICommandHandlerFactory, CommandHandlerFactory>()
+        .AddScoped<ICommandHandler, GeneratePageCommandHandler>()
+        .AddScoped<ICommandHandler, GenerateBlockCommandHandler>()
+        .AddScoped<ICommandService, CommandService>())
+.Build();
 
-    try
-    {
-        await commandService.ExecuteAsync(args[0]);
-        Console.WriteLine("Generated!");
-    }
-    catch (TemplateReadingException)
-    {
-        Console.WriteLine("Error reading the templates");
-    }
-    catch (TemplateFormattingException)
-    {
-        Console.WriteLine("Error formatting the templates");
-    }
-    catch (ScaffoldingException)
-    {
-        Console.WriteLine("Error generating the files");
-    }
+IServiceProvider services = host.Services;
+using IServiceScope serviceScope = services.CreateScope();
+IServiceProvider provider = serviceScope.ServiceProvider;
+
+ICommandService commandService = provider.GetRequiredService<ICommandService>();
+
+try
+{
+    await commandService.ExecuteAsync(string.Join(' ', args));
+    Console.WriteLine("Generated!");
+}
+catch (TemplateReadingException)
+{
+    Console.WriteLine("Error reading the templates");
+}
+catch (TemplateFormattingException)
+{
+    Console.WriteLine("Error formatting the templates");
+}
+catch (ScaffoldingException)
+{
+    Console.WriteLine("Error generating the files");
 }
 
 void ShowHelp()
@@ -57,26 +69,4 @@ void ShowHelp()
     Console.WriteLine("-------------");
     Console.WriteLine("\nUsage:");
     Console.WriteLine("opti generate page Test");
-}
-
-IServiceProvider GetServiceProvider()
-{
-    using IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((_, services) =>
-        services
-            .AddScoped<ICommandMapper, CommandMapper>()
-            .AddScoped<ICommandTypeMapper, CommandTypeMapper>()
-            .AddScoped<IObjectTypeMapper, ObjectTypeMapper>()
-            .AddScoped<IFileService, FileService>()
-            .AddScoped<ITemplateRepository, TemplateRepository>()
-            .AddScoped<ICommandHandlerFactory, CommandHandlerFactory>()
-            .AddScoped<ICommandHandler, GeneratePageCommandHandler>()
-            .AddScoped<ICommandHandler, GenerateBlockCommandHandler>()
-            .AddScoped<ICommandService, CommandService>())
-    .Build();
-
-    IServiceProvider services = host.Services;
-
-    using IServiceScope serviceScope = services.CreateScope();
-    return serviceScope.ServiceProvider;
 }

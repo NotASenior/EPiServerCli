@@ -1,6 +1,6 @@
 ﻿using {1}.Models.Pages;
 using EPiServer.Web.Mvc;
-using Microsoft.AspNetCore.Mvc
+using Microsoft.AspNetCore.Mvc;
 
 namespace {1}.Controllers
 {{
