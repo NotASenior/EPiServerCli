@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EPiServerCli.DataAccess.Interfaces\Opti.Cli.DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\Opti.Cli.DataAccess.Interfaces\Opti.Cli.DataAccess.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

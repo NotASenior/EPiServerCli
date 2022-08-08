@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\Entities\Opti.Cli.Domain.csproj" />
+    <ProjectReference Include="..\..\Domain\Opti.Cli.Domain\Opti.Cli.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -42,9 +42,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Business\EPiServerCli.Business.Interfaces\Opti.Cli.Business.Interfaces.csproj" />
-    <ProjectReference Include="..\..\Business\EPiServerCli.Business\Opti.Cli.Business.csproj" />
-    <ProjectReference Include="..\..\DataAccess\EPiServerCli.DataAccess\Opti.Cli.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Business\Opti.Cli.Business.Interfaces\Opti.Cli.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Business\Opti.Cli.Business\Opti.Cli.Business.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Opti.Cli.DataAccess.Interfaces\Opti.Cli.DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Opti.Cli.DataAccess\Opti.Cli.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Domain\Opti.Cli.Domain\Opti.Cli.Domain.csproj" />
   </ItemGroup>
 
 </Project>
