@@ -36,7 +36,6 @@ ICommandService commandService = provider.GetRequiredService<ICommandService>();
 await commandService.ExecuteAsync("generate page Test");
 
 Console.WriteLine("Generated!");
-Console.ReadLine();
 
 //if (args.Length == 0)
 //{
