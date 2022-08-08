@@ -22,7 +22,7 @@ namespace Opti.Cli.Business.Handlers
             string directoryPath = Directory.GetCurrentDirectory();
 
             var createClassTask = repository.CreateAsync($"{directoryPath}/Models/Pages/{command.Name}.cs", classContent);
-            var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{command.Name}.cs", controllerContent);
+            var createControllerTask = repository.CreateAsync($"{directoryPath}/Controllers/{command.Name}Controller.cs", controllerContent);
             var createViewTask = repository.CreateAsync($"{directoryPath}/Views/{command.Name}/Index.cshtml", viewContent);
 
             try

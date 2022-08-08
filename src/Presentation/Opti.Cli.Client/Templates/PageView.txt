@@ -1,8 +1,8 @@
 ﻿@using {1}
-@model PageViewModel<{0}>
+@model {0}
 
 <div>
-	<h1>@Html.PropertyFor(x => x.CurrentPage.Title)</h1>
-	<p>@Html.PropertyFor(x => x.CurrentPage.MainBody)</p>
-	<div>@Html.PropertyFor(x => x.CurrentPage.MainContentArea)</div>
+	<h1>@Html.PropertyFor(x => x.Title)</h1>
+	<p>@Html.PropertyFor(x => x.MainBody)</p>
+	<div>@Html.PropertyFor(x => x.MainContentArea)</div>
 </div>
