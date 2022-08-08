@@ -4,29 +4,6 @@ A Command Line Interface tool to **scaffold pages and blocks** for EPiServer/Opt
 ## How to use it?
 You can use the tool easily in an **easy-to-remember** format:
 
-<table>
-	<thead>
-		<tr>
-			<th>Command</th>
-			<th>Content Type</th>
-			<th>Name</th>
-			<th>Flags</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td rowspan="2">Generate</td>
-			<td>Page</td>
-			<td>TestPage</td>
-			<td rowspan="2">Comming soon!</td>
-		</tr>
-		<tr>
-			<td>Block</td>
-			<td>TestBlock</td>
-		</tr>
-	</tbody>
-</table>
-
 `opti generate page TestPage`
 
 You can even use it **without typing the whole command**:
@@ -51,6 +28,32 @@ These commands will **autocomplete** to this:
 
 When executed, this command will generate the page **class, controller and view!** 
 (And a **view model** if you use a **flag**. **Isn't this great!?**)
+
+## Take a look at the commands!
+<table>
+	<thead>
+		<tr>
+			<th>Command</th>
+			<th>Content Type</th>
+			<th>Name</th>
+			<th>Flags</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">Generate</td>
+			<td>Page</td>
+			<td>TestPage</td>
+			<td rowspan="2">
+				Take a look at the <a href="#do-we-have-flags-to-customize-the-output">flags</a> section
+			</td>
+		</tr>
+		<tr>
+			<td>Block</td>
+			<td>TestBlock</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Do we have flags to customize the output?
 This section will be written soon!
