@@ -24,7 +24,8 @@ These commands will **autocomplete** to this:
 
 `epi generate page TestPage`
 
-When executed, this command will generate the page **class, controller and view!** (And a **view model** if you use a **flag**. **Isn't this great!?**)
+When executed, this command will generate the page **class, controller and view!** 
+(And a **view model** if you use a **flag**. **Isn't this great!?**)
 
 ## Do we have flags to customize the output?
 This section will be written soon!
