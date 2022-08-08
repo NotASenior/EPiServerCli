@@ -16,25 +16,58 @@ namespace EPiServerCli.Domain.Mappers
 
         public Command Map(string command)
         {
-            command = command ?? throw new ArgumentNullException(nameof(command));
+            Validate(command);
+            string[] commandParts = GetCommandParts(command);
+            Validate(commandParts);
 
+            CommandType commandType = commandTypeMapper!.Map(commandParts[0]);
+            ObjectType objectType = objectTypeMapper!.Map(commandParts[1]);
+            string name = AutocompleteName(commandParts[2], objectType);
+
+            return new Command(commandType, objectType, name, new List<string>(), new List<string>());
+        }
+
+        private static void Validate(string command)
+        {
+            command = command ?? throw new ArgumentNullException(nameof(command));
             if (string.IsNullOrEmpty(command?.Trim()))
             {
                 throw new ArgumentException(null, nameof(command));
             }
+        }
 
+        private static void Validate(string[] commandParts)
+        {
+            if (commandParts.Length < 3) throw new CommandNotValidException();
+        }
+
+        private static string[] GetCommandParts(string command)
+        {
             string[]? commandParts = command.Trim().Split(' ');
             commandParts = commandParts
                 .Where(x => !string.IsNullOrEmpty(x?.Trim()))
                 .ToArray();
+            return commandParts;
+        }
 
-            if (commandParts.Length < 3) throw new CommandNotValidException();
+        private static string AutocompleteName(string name, ObjectType objectType)
+        {
+            string suffix = GetSuffix(objectType);
 
-            string name = commandParts[2];
-            CommandType commandType = commandTypeMapper!.Map(commandParts[0]);
-            ObjectType objectType = objectTypeMapper!.Map(commandParts[1]);
+            if (!name.EndsWith(suffix)) return name + suffix;
 
-            return new Command(commandType, objectType, name, new List<string>(), new List<string>());
+            return name;
+        }
+
+        private static string GetSuffix(ObjectType objectType)
+        {
+            switch (objectType)
+            {
+                case ObjectType.Page: return "Page";
+                case ObjectType.Block: return "Block";
+            }
+
+            throw new ArgumentOutOfRangeException(nameof(objectType));
         }
     }
 }

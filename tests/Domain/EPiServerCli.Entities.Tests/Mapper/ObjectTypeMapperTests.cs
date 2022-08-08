@@ -2,6 +2,7 @@ using EPiServerCli.Domain.Entities;
 using EPiServerCli.Domain.Exceptions;
 using EPiServerCli.Domain.Mappers;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace EPiServerCli.Domain.Tests.Mappers
@@ -45,6 +46,23 @@ namespace EPiServerCli.Domain.Tests.Mappers
         public void Argument_Invalid_Throws(string type)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => mapper.Map(type));
+        }
+
+        [Theory]
+        [InlineData("p", ObjectType.Page)]
+        [InlineData("pa", ObjectType.Page)]
+        [InlineData("pag", ObjectType.Page)]
+        [InlineData("page", ObjectType.Page)]
+        [InlineData("b", ObjectType.Block)]
+        [InlineData("bl", ObjectType.Block)]
+        [InlineData("blo", ObjectType.Block)]
+        [InlineData("bloc", ObjectType.Block)]
+        [InlineData("block", ObjectType.Block)]
+        public void Argument_NotCompleted_ShouldAutocomplete(string type, ObjectType expected)
+        {
+            ObjectType actual = mapper.Map(type);
+
+            Assert.Equal(expected, actual);
         }
     }
 }

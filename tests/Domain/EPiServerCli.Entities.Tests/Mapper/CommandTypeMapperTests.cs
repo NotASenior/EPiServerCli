@@ -45,5 +45,21 @@ namespace EPiServerCli.Domain.Tests.Mappers
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => mapper.Map(type));
         }
+
+        [Theory]
+        [InlineData("g")]
+        [InlineData("ge")]
+        [InlineData("gen")]
+        [InlineData("gene")]
+        [InlineData("gener")]
+        [InlineData("genera")]
+        [InlineData("generat")]
+        [InlineData("generate")]
+        public void Argument_NotCompleted_ShouldAutocomplete(string type)
+        {
+            CommandType actual = mapper.Map(type);
+
+            Assert.Equal(CommandType.Generate, actual);
+        }
     }
 }

@@ -53,5 +53,14 @@ namespace EPiServerCli.Domain.Tests.Mappers
         {
             Assert.Throws<CommandNotValidException>(() => mapper.Map(command));
         }
+
+        [Fact]
+        public void Command_WithoutSuffix_ShouldAutocomplete()
+        {
+            string command = "generate page Test";
+            Command mappedCommand = mapper.Map(command);
+
+            Assert.Equal("TestPage", mappedCommand.Name);
+        }
     }
 }
