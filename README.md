@@ -31,10 +31,10 @@ When executed, this command will generate the page **class, controller and view!
 This section will be written soon!
 
 ## How to install it?
-This section will be written soon!
+dotnet tool install --global Opti.Cli.Client
 
 ## How to update it?
-This section will be written soon!
+dotnet tool update --global Opti.Cli.Client
 
 ## How to uninstall it?
-This section will be written soon!
+dotnet tool uninstall --global Opti.Cli.Client
