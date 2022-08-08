@@ -27,17 +27,24 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.Business.Tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{79195628-F8CC-4B08-80F3-304C1BED2A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.DataAccess", "src\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj", "{9F0F189C-7830-429B-B339-DA4718EFAABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.DataAccess", "src\DataAccess\EPiServerCli.DataAccess\EPiServerCli.DataAccess.csproj", "{9F0F189C-7830-429B-B339-DA4718EFAABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.DataAccess.Interfaces", "src\DataAccess\EPiServerCli.DataAccess.Interfaces\EPiServerCli.DataAccess.Interfaces.csproj", "{58F93C6A-A031-4039-9E24-BFC036C5C949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.DataAccess.Interfaces", "src\DataAccess\EPiServerCli.DataAccess.Interfaces\EPiServerCli.DataAccess.Interfaces.csproj", "{58F93C6A-A031-4039-9E24-BFC036C5C949}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{548D12E5-5F5C-4784-B21B-05F8560E0F7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiServerCli.DataAccess.Tests", "tests\DataAccess\EPiServerCli.DataAccess.Tests\EPiServerCli.DataAccess.Tests.csproj", "{CA700F39-6C06-40EC-A0B1-179AFDF90959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.DataAccess.Tests", "tests\DataAccess\EPiServerCli.DataAccess.Tests\EPiServerCli.DataAccess.Tests.csproj", "{CA700F39-6C06-40EC-A0B1-179AFDF90959}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B2FBED39-9EFB-4046-8EC2-7289B108E512}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPiServerCli.Client", "src\Presentation\EPiServerCli.Client\EPiServerCli.Client.csproj", "{4A13846E-9386-4DC6-B83B-6F2A9A44D810}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{62B30BAA-1519-46E8-94F3-88A97AAFD43C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
