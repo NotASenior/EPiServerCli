@@ -9,6 +9,13 @@
 	<PackAsTool>true</PackAsTool>
 	<ToolCommandName>opti</ToolCommandName>
 	<PackageOutputPath>./nupkg</PackageOutputPath>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Authors>NotASenior</Authors>
+	<Company>NotASeniorWorks</Company>
+	<Description>CLI tool to scaffold EpiServer/Optimizely CMS components</Description>
+	<Copyright>Copyright (c) NotASenior 2022</Copyright>
+	<PackageProjectUrl>https://github.com/NotASenior/Opti.Cli</PackageProjectUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +42,13 @@
     <Content Include="Templates\PageView.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
