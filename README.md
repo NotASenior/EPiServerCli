@@ -4,12 +4,37 @@ A Command Line Interface tool to **scaffold pages and blocks** for EPiServer/Opt
 ## How to use it?
 You can use the tool easily in an **easy-to-remember** format:
 
+<table>
+	<thead>
+		<tr>
+			<th>Command</th>
+			<th>Content Type</th>
+			<th>Name</th>
+			<th>Flags</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">Generate</td>
+			<td>Page</td>
+			<td>TestPage</td>
+			<td rowspan="2">Comming soon!</td>
+		</tr>
+		<tr>
+			<td>Block</td>
+			<td>TestBlock</td>
+		</tr>
+	</tbody>
+</table>
+
 `opti generate page TestPage`
 
 You can even use it **without typing the whole command**:
 
 `opti g page TestPage`
+<br>
 `opti ge page TestPage`
+<br>
 `opti gen page TestPage`
 
 This command will **autocomplete** to this:
@@ -38,3 +63,11 @@ dotnet tool update --global Opti.Cli.Client
 
 ## How to uninstall it?
 dotnet tool uninstall --global Opti.Cli.Client
+
+## What are we planning to add next?
+- Selection factories
+- Initializable modules
+- Template coordinators
+- Social API demos
+- Path personalization
+- Flags to customize the content generation
