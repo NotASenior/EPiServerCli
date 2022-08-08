@@ -19,7 +19,7 @@
 	<RepositoryUrl>https://github.com/NotASenior/Opti.Cli</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageTags>episerver;optimizely;cms;cli;scaffold</PackageTags>
-	<Version>0.1.0.4</Version>
+	<Version>1.0.4</Version>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
