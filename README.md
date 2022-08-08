@@ -71,6 +71,7 @@ dotnet tool uninstall --global Opti.Cli.Client
 - Selection factories
 - Initializable modules
 - Template coordinators
-- Social API demos
 - Path personalization
 - Flags to customize the content generation
+- Feature architecture approach to generate the files in the same folder
+- Social API demo
