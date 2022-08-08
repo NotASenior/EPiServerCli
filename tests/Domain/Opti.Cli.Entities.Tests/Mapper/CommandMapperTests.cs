@@ -17,6 +17,21 @@ namespace Opti.Cli.Domain.Tests.Mappers
         }
 
         [Fact]
+        public void Command_BlockOk_ShouldWork()
+        {
+            Command command = mapper.Map("generate block TestBlock");
+
+            Assert.NotNull(command);
+            Assert.Equal(CommandType.Generate, command.Type);
+            Assert.Equal(ObjectType.Block, command.ObjectType);
+            Assert.Equal("TestBlock", command.Name);
+            Assert.NotNull(command.Path);
+            Assert.NotNull(command.Options);
+            Assert.Empty(command.Path);
+            Assert.Empty(command.Options);
+        }
+
+        [Fact]
         public void Command_Ok_ShouldWork()
         {
             Command command = mapper.Map("generate page TestPage");

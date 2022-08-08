@@ -11,8 +11,57 @@ using Opti.Cli.DataAccess.Services;
 using Opti.Cli.Domain.Mappers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Reflection;
+using Opti.Cli.Domain.Exceptions;
 
-using IHost host = Host.CreateDefaultBuilder(args)
+await Init(args);
+
+async Task Init(string[] args)
+{
+    if (args.Length == 0)
+    {
+        ShowHelp();
+        return;
+    }
+
+    IServiceProvider provider = GetServiceProvider();
+    ICommandService commandService = provider.GetRequiredService<ICommandService>();
+
+    try
+    {
+        await commandService.ExecuteAsync(args[0]);
+        Console.WriteLine("Generated!");
+    }
+    catch (TemplateReadingException)
+    {
+        Console.WriteLine("Error reading the templates");
+    }
+    catch (TemplateFormattingException)
+    {
+        Console.WriteLine("Error formatting the templates");
+    }
+    catch (ScaffoldingException)
+    {
+        Console.WriteLine("Error generating the files");
+    }
+}
+
+void ShowHelp()
+{
+    var versionString = Assembly.GetEntryAssembly()?
+                                .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+                                .InformationalVersion
+                                .ToString();
+
+    Console.WriteLine($"opti v{versionString}");
+    Console.WriteLine("-------------");
+    Console.WriteLine("\nUsage:");
+    Console.WriteLine("opti generate page Test");
+}
+
+IServiceProvider GetServiceProvider()
+{
+    using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>
         services
             .AddScoped<ICommandMapper, CommandMapper>()
@@ -26,75 +75,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
             .AddScoped<ICommandService, CommandService>())
     .Build();
 
-IServiceProvider services = host.Services;
+    IServiceProvider services = host.Services;
 
-using IServiceScope serviceScope = services.CreateScope();
-IServiceProvider provider = serviceScope.ServiceProvider;
-
-ICommandService commandService = provider.GetRequiredService<ICommandService>();
-
-await commandService.ExecuteAsync("generate page Test");
-
-Console.WriteLine("Generated!");
-
-//if (args.Length == 0)
-//{
-//    var versionString = Assembly.GetEntryAssembly()?
-//                            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
-//                            .InformationalVersion
-//                            .ToString();
-
-//    Console.WriteLine($"botsay v{versionString}");
-//    Console.WriteLine("-------------");
-//    Console.WriteLine("\nUsage:");
-//    Console.WriteLine("  botsay <message>");
-//    return;
-//}
-
-//ShowBot(string.Join(' ', args));
-
-
-//static void ShowBot(string message)
-//{
-//    string bot = $"\n        {message}";
-//    bot += @"
-//    __________________
-//                      \
-//                       \
-//                          ....
-//                          ....'
-//                           ....
-//                        ..........
-//                    .............'..'..
-//                 ................'..'.....
-//               .......'..........'..'..'....
-//              ........'..........'..'..'.....
-//             .'....'..'..........'..'.......'.
-//             .'..................'...   ......
-//             .  ......'.........         .....
-//             .    _            __        ......
-//            ..    #            ##        ......
-//           ....       .                 .......
-//           ......  .......          ............
-//            ................  ......................
-//            ........................'................
-//           ......................'..'......    .......
-//        .........................'..'.....       .......
-//     ........    ..'.............'..'....      ..........
-//   ..'..'...      ...............'.......      ..........
-//  ...'......     ...... ..........  ......         .......
-// ...........   .......              ........        ......
-//.......        '...'.'.              '.'.'.'         ....
-//.......       .....'..               ..'.....
-//   ..       ..........               ..'........
-//          ............               ..............
-//         .............               '..............
-//        ...........'..              .'.'............
-//       ...............              .'.'.............
-//      .............'..               ..'..'...........
-//      ...............                 .'..............
-//       .........                        ..............
-//        .....
-//";
-//    Console.WriteLine(bot);
-//}
+    using IServiceScope serviceScope = services.CreateScope();
+    return serviceScope.ServiceProvider;
+}
