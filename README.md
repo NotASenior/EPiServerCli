@@ -1,5 +1,5 @@
 # EPiServer CLI
-A Command Line Interface tool to **scaffold pages and blocks** (And **more stuff soon!**)
+A Command Line Interface tool to **scaffold pages and blocks** for EPiServer CMS (And **more stuff soon!**)
 
 ## How to use it?
 You can use the tool easily in an **easy-to-remember** format:
