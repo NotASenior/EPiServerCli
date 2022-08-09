@@ -29,6 +29,20 @@ These commands will **autocomplete** to this:
 When executed, this command will generate the page **class, controller and view!** 
 (And a **view model** if you use a **flag**. **Isn't this great!?**)
 
+Generated files:
+- Models/Pages/TestPage.cs
+- Controllers/TestPageController.cs
+- Views/TestPage/Index.cshtml
+
+Or you can use the **feature** approach (Not supported yet):
+
+`opti generate page TestPage --feature`
+
+This will generate the files like this:
+- Features/TestPage/TestPage.cs
+- Features/TestPage/TestPageController.cs
+- Features/TestPage/Index.cshtml
+
 ## Take a look at the commands!
 <table>
 	<thead>
