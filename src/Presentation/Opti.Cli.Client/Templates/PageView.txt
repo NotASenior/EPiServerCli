@@ -1,4 +1,6 @@
-﻿@using {1}
+﻿@using EPiServer.Web.Mvc.Html
+@using {1}.Models.Pages
+
 @model {0}
 
 <div>
