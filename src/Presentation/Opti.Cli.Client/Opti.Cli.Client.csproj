@@ -19,7 +19,7 @@
 	<RepositoryUrl>https://github.com/NotASenior/Opti.Cli</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageTags>episerver;optimizely;cms;cli;scaffold</PackageTags>
-	<Version>1.0.4</Version>
+	<Version>1.0.5</Version>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
@@ -32,9 +32,13 @@
     <None Remove="Templates\Page.txt" />
     <None Remove="Templates\PageController.txt" />
     <None Remove="Templates\PageView.txt" />
+    <None Remove="Templates\SelectionFactory.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Templates\SelectionFactory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templates\Block.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

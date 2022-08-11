@@ -65,6 +65,7 @@ namespace Opti.Cli.Domain.Mappers
             {
                 case ObjectType.Page: return "Page";
                 case ObjectType.Block: return "Block";
+                case ObjectType.SelectionFactory: return "SelectionFactory";
             }
 
             throw new ArgumentOutOfRangeException(nameof(objectType));
