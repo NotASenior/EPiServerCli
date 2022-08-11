@@ -15,5 +15,10 @@
             public const string Controller = "Templates/PageController.txt";
             public const string View = "Templates/PageView.txt";
         }
+
+        public static class SelectionFactories
+        {
+            public const string Class = "Templates/SelectionFactory.txt";
+        }
     }
 }

@@ -50,9 +50,22 @@ namespace Opti.Cli.Business.Tests.Factories
         }
 
         [Fact]
-        public void Command_Invalid_ShouldThrow()
+        public void Command_GenerateSelectionFactory_ShouldWork()
         {
             var command = new Command(CommandType.Generate, ObjectType.SelectionFactory,
+                It.IsAny<string>(),
+                It.IsAny<IEnumerable<string>>(),
+                It.IsAny<IEnumerable<string>>());
+
+            ICommandHandler? handler = factory.Get(command);
+
+            Assert.IsType<GenerateSelectionFactoryCommandHandler>(handler);
+        }
+
+        [Fact]
+        public void Command_Invalid_ShouldThrow()
+        {
+            var command = new Command(CommandType.Generate, ObjectType.TemplateCoordinator,
                 It.IsAny<string>(),
                 It.IsAny<IEnumerable<string>>(),
                 It.IsAny<IEnumerable<string>>());
