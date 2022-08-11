@@ -66,6 +66,10 @@ This will generate the files like this:
 			<td>Block</td>
 			<td>TestBlock</td>
 		</tr>
+		<tr>
+			<td>SelectionFactory</td>
+			<td>TestSelectionFactory</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -82,7 +86,6 @@ dotnet tool update --global Opti.Cli.Client
 dotnet tool uninstall --global Opti.Cli.Client
 
 ## What are we planning to add next?
-- Selection factories
 - Initializable modules
 - Template coordinators
 - Path personalization
