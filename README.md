@@ -55,10 +55,10 @@ This will generate the files like this:
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2">Generate</td>
+			<td rowspan="3">Generate</td>
 			<td>Page</td>
 			<td>TestPage</td>
-			<td rowspan="2">
+			<td rowspan="3">
 				Take a look at the <a href="#do-we-have-flags-to-customize-the-output">flags</a> section
 			</td>
 		</tr>
