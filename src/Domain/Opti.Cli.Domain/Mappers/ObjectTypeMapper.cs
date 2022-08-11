@@ -8,7 +8,9 @@ namespace Opti.Cli.Domain.Mappers
         private readonly IEnumerable<string> types = new List<string>()
         {
             "page",
-            "block"
+            "block",
+            "sf",
+            "selectionFactory"
         };
 
         public ObjectType Map(string type)
@@ -20,6 +22,8 @@ namespace Opti.Cli.Domain.Mappers
             {
                 "block" => ObjectType.Block,
                 "page" => ObjectType.Page,
+                "sf" => ObjectType.SelectionFactory,
+                "selectionfactory" => ObjectType.SelectionFactory,
                 _ => throw new ArgumentOutOfRangeException(nameof(type)),
             };
         }

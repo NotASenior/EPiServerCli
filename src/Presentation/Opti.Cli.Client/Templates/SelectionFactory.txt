@@ -1,0 +1,32 @@
+﻿using EPiServer.Shell.ObjectEditing;
+using System.Collections.Generic;
+
+namespace {1}.Infrastructure.SelectionFactories
+{{
+    public class {0}SelectionFactory : ISelectionFactory
+    {{
+        public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
+        {{
+            var fruits = new List<SelectItem>
+            {{
+                new SelectItem
+                {{
+                    Value = "1",
+                    Text = "Banana"
+                }},
+                new SelectItem
+                {{
+                    Value = "2",
+                    Text = "Strawberry"
+                }},
+                new SelectItem
+                {{
+                    Value = "3",
+                    Text = "Orange"
+                }}
+            }};
+ 
+            return fruits;
+        }}
+    }}
+}}

@@ -77,5 +77,23 @@ namespace Opti.Cli.Domain.Tests.Mappers
 
             Assert.Equal("TestPage", mappedCommand.Name);
         }
+
+        [Fact]
+        public void Block_WithoutSuffix_ShouldAutocomplete()
+        {
+            string command = "generate block Test";
+            Command mappedCommand = mapper.Map(command);
+
+            Assert.Equal("TestBlock", mappedCommand.Name);
+        }
+
+        [Fact]
+        public void SelectionFactory_WithoutSuffix_ShouldAutocomplete()
+        {
+            string command = "generate sf Test";
+            Command mappedCommand = mapper.Map(command);
+
+            Assert.Equal("TestSelectionFactory", mappedCommand.Name);
+        }
     }
 }
