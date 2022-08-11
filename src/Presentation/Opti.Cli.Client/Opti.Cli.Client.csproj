@@ -32,9 +32,13 @@
     <None Remove="Templates\Page.txt" />
     <None Remove="Templates\PageController.txt" />
     <None Remove="Templates\PageView.txt" />
+    <None Remove="Templates\SelectionFactory.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Templates\SelectionFactory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templates\Block.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
