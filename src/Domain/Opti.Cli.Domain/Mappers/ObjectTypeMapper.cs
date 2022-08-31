@@ -10,7 +10,8 @@ namespace Opti.Cli.Domain.Mappers
             "page",
             "block",
             "sf",
-            "selectionFactory"
+            "selectionFactory",
+            "selection-factory"
         };
 
         public ObjectType Map(string type)
@@ -24,6 +25,7 @@ namespace Opti.Cli.Domain.Mappers
                 "page" => ObjectType.Page,
                 "sf" => ObjectType.SelectionFactory,
                 "selectionfactory" => ObjectType.SelectionFactory,
+                "selection-factory" => ObjectType.SelectionFactory,
                 _ => throw new ArgumentOutOfRangeException(nameof(type)),
             };
         }

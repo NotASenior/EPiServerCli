@@ -67,6 +67,8 @@ namespace Opti.Cli.Domain.Tests.Mappers
         [InlineData("select", ObjectType.SelectionFactory)]
         [InlineData("selectionf", ObjectType.SelectionFactory)]
         [InlineData("selectionF", ObjectType.SelectionFactory)]
+        [InlineData("selectionFactory", ObjectType.SelectionFactory)]
+        [InlineData("selection-factory", ObjectType.SelectionFactory)]
         public void Argument_NotCompleted_ShouldAutocomplete(string type, ObjectType expected)
         {
             ObjectType actual = mapper.Map(type);

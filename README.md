@@ -67,7 +67,7 @@ This will generate the files like this:
 			<td>TestBlock</td>
 		</tr>
 		<tr>
-			<td>SelectionFactory</td>
+			<td>Selection-factory</td>
 			<td>TestSelectionFactory</td>
 		</tr>
 	</tbody>
