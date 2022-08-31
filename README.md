@@ -58,7 +58,7 @@ This will generate the files like this:
 			<td rowspan="4">generate</td>
 			<td>page</td>
 			<td>TestPage</td>
-			<td rowspan="3">
+			<td rowspan="4">
 				Take a look at the <a href="#do-we-have-flags-to-customize-the-output">flags</a> section
 			</td>
 		</tr>
