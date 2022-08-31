@@ -55,7 +55,7 @@ This will generate the files like this:
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="4">generate</td>
+			<td rowspan="4">opti generate</td>
 			<td>page</td>
 			<td>TestPage</td>
 			<td rowspan="4">
