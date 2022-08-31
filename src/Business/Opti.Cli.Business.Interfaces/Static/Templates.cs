@@ -20,5 +20,10 @@
         {
             public const string Class = "Templates/SelectionFactory.txt";
         }
+
+        public static class InitializableModule
+        {
+            public const string Class = "Templates/InitializableModule.txt";
+        }
     }
 }

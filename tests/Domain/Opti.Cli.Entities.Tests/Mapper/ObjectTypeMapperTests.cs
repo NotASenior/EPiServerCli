@@ -1,8 +1,6 @@
 using Opti.Cli.Domain.Entities;
-using Opti.Cli.Domain.Exceptions;
 using Opti.Cli.Domain.Mappers;
 using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace Opti.Cli.Domain.Tests.Mappers
@@ -69,6 +67,9 @@ namespace Opti.Cli.Domain.Tests.Mappers
         [InlineData("selectionF", ObjectType.SelectionFactory)]
         [InlineData("selectionFactory", ObjectType.SelectionFactory)]
         [InlineData("selection-factory", ObjectType.SelectionFactory)]
+        [InlineData("initializabl", ObjectType.InitializableModule)]
+        [InlineData("initializable-module", ObjectType.InitializableModule)]
+        [InlineData("im", ObjectType.InitializableModule)]
         public void Argument_NotCompleted_ShouldAutocomplete(string type, ObjectType expected)
         {
             ObjectType actual = mapper.Map(type);

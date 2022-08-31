@@ -19,9 +19,14 @@ namespace Opti.Cli.Business.Factories
         {
             switch (command.Type, command.ObjectType)
             {
-                case (CommandType.Generate, ObjectType.Page): return new GeneratePageCommandHandler(templateRepository);
-                case (CommandType.Generate, ObjectType.Block): return new GenerateBlockCommandHandler(templateRepository);
-                case (CommandType.Generate, ObjectType.SelectionFactory): return new GenerateSelectionFactoryCommandHandler(templateRepository);
+                case (CommandType.Generate, ObjectType.Page): 
+                    return new GeneratePageCommandHandler(templateRepository);
+                case (CommandType.Generate, ObjectType.Block): 
+                    return new GenerateBlockCommandHandler(templateRepository);
+                case (CommandType.Generate, ObjectType.SelectionFactory): 
+                    return new GenerateSelectionFactoryCommandHandler(templateRepository);
+                case (CommandType.Generate, ObjectType.InitializableModule): 
+                    return new GenerateInitializableModuleCommandHandler(templateRepository);
             }
 
             throw new ArgumentOutOfRangeException(nameof(command));

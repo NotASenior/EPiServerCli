@@ -5,6 +5,7 @@
         Page,
         Block,
         SelectionFactory,
+        InitializableModule,
         TemplateCoordinator
     }
 }

@@ -95,5 +95,14 @@ namespace Opti.Cli.Domain.Tests.Mappers
 
             Assert.Equal("TestSelectionFactory", mappedCommand.Name);
         }
+
+        [Fact]
+        public void InitializableModule_WithoutSuffix_ShouldAutocomplete()
+        {
+            string command = "generate im Test";
+            Command mappedCommand = mapper.Map(command);
+
+            Assert.Equal("TestInitialization", mappedCommand.Name);
+        }
     }
 }

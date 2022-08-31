@@ -55,20 +55,24 @@ This will generate the files like this:
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="3">Generate</td>
-			<td>Page</td>
+			<td rowspan="4">generate</td>
+			<td>page</td>
 			<td>TestPage</td>
 			<td rowspan="3">
 				Take a look at the <a href="#do-we-have-flags-to-customize-the-output">flags</a> section
 			</td>
 		</tr>
 		<tr>
-			<td>Block</td>
+			<td>block</td>
 			<td>TestBlock</td>
 		</tr>
 		<tr>
-			<td>Selection-factory</td>
+			<td>selection-factory</td>
 			<td>TestSelectionFactory</td>
+		</tr>
+		<tr>
+			<td>initializable-module</td>
+			<td>TestInitialization</td>
 		</tr>
 	</tbody>
 </table>

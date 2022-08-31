@@ -1,0 +1,18 @@
+﻿using EPiServer.Framework;
+using EPiServer.Framework.Initialization;
+
+namespace {1}.Infrastructure.Initialization
+{{
+    [InitializableModule]
+    [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]
+    public class {0} : IInitializableModule
+    {{
+        public void Initialize(InitializationEngine context)
+        {{
+        }}
+
+        public void Uninitialize(InitializationEngine context)
+        {{
+        }}
+    }}
+}}
