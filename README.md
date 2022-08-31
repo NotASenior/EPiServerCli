@@ -90,7 +90,7 @@ dotnet tool update --global Opti.Cli.Client
 dotnet tool uninstall --global Opti.Cli.Client
 
 ## What are we planning to add next?
-- Template coordinators
+- Categories
 - Path personalization
 - Flags to customize the content generation
 - Feature architecture approach to generate the files in the same folder
